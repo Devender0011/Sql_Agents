@@ -1,0 +1,7 @@
+langchain
+langchain-community
+langgraph
+sqlalchemy>=1.4
+pyodbc
+python-dotenv
+google-cloud-aiplatform 
