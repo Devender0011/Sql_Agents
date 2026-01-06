@@ -1,0 +1,544 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg-main: #020617;
+    --bg-card: rgba(255,255,255,0.08);
+    --border-soft: rgba(255,255,255,0.18);
+
+    --text-main: #ffffff;
+    --text-muted: #cbd5f5;
+
+    --grad-primary: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+/* ================= GLOBAL ================= */
+body {
+    background: radial-gradient(circle at top, #1e293b, #020617);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+.container-main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 32px 16px;
+}
+
+/* ================= HEADER ================= */
+.app-header {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(14px);
+    margin-bottom: 28px;
+}
+
+.app-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: #38bdf8;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+/* ================= TEXTAREA ================= */
+textarea.form-control {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-soft);
+}
+
+textarea.form-control::placeholder {
+    color: #94a3b8 !important;
+}
+
+textarea.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.35);
+}
+
+/* ================= SELECT (SAFE) ================= */
+select.form-select {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #9ca3af;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+    background: var(--grad-primary);
+    border: none;
+    font-weight: 600;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border-soft);
+    color: #ffffff;
+}
+
+/* ================= QUICK TEMPLATES ================= */
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.quick-card {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 18px;
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.14),
+        rgba(255,255,255,0.04)
+    );
+    border: 1px solid var(--border-soft);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+}
+
+.quick-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.blue   { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.green  { background: linear-gradient(135deg, #22c55e, #4ade80); }
+.purple { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+.orange { background: linear-gradient(135deg, #f97316, #fb923c); }
+
+.quick-title {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.quick-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ================= SQL BOX ================= */
+.sql-box {
+    background: #020617;
+    border-radius: 10px;
+    padding: 16px;
+    color: #e5e7eb;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+    border: 1px solid var(--border-soft);
+}
+
+/* ================= TABLE ================= */
+.table {
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.table thead th {
+    background: rgba(255,255,255,0.08);
+}
+
+.table-hover tbody tr:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* ================= HISTORY PAGE (FINAL) ================= */
+.history-page .card,
+.history-page .card * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* SQL toggle */
+.history-page summary {
+    color: #93c5fd !important;
+}
+
+/* Buttons */
+.history-page .btn {
+    color: #93c5fd !important;
+    border-color: #93c5fd !important;
+}
+
+.history-page .btn:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* =========================================================
+   FINAL FIX — QUERY HISTORY TEXT VISIBILITY (GUARANTEED)
+   ========================================================= */
+
+/* Make history card background slightly lighter */
+.history-page .history-card {
+    background: rgba(255, 255, 255, 0.10) !important;
+}
+
+/* FORCE all text inside history card to white */
+.history-page .history-card,
+.history-page .history-card * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Question text */
+.history-page .history-card li span {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+/* Numbers (1., 2., 3.) */
+.history-page .history-card strong {
+    color: #ffffff !important;
+}
+
+/* Override Bootstrap muted text */
+.history-page .history-card .text-muted {
+    color: #c7d2fe !important;
+}
+
+/* SQL toggle */
+.history-page .history-card summary {
+    color: #93c5fd !important;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* SQL block */
+.history-page .history-card pre {
+    background: #020617 !important;
+    color: #e5e7eb !important;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Re-run button */
+.history-page .history-card .btn-outline-primary {
+    color: #93c5fd !important;
+    border-color: #93c5fd !important;
+}
+
+.history-page .history-card .btn-outline-primary:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+
+
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg-main: #020617;
+    --bg-card: rgba(255,255,255,0.08);
+    --border-soft: rgba(255,255,255,0.18);
+
+    --text-main: #ffffff;
+    --text-muted: #cbd5f5;
+
+    --grad-primary: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+/* ================= GLOBAL ================= */
+body {
+    background: radial-gradient(circle at top, #1e293b, #020617);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+.container-main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 32px 16px;
+}
+
+/* ================= HEADER ================= */
+.app-header {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(14px);
+    margin-bottom: 28px;
+}
+
+.app-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.app-subtitle {
+    font-size: 0.9rem;
+    color: #38bdf8;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+/* ================= TEXTAREA ================= */
+textarea.form-control {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-soft);
+}
+
+textarea.form-control::placeholder {
+    color: #94a3b8 !important;
+}
+
+textarea.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.35);
+}
+
+/* ================= SELECT (SAFE) ================= */
+select.form-select {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #9ca3af;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+    background: var(--grad-primary);
+    border: none;
+    font-weight: 600;
+}
+
+.btn-outline-secondary {
+    border-color: var(--border-soft);
+    color: #ffffff;
+}
+
+/* ================= QUICK TEMPLATES ================= */
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.quick-card {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 18px;
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.14),
+        rgba(255,255,255,0.04)
+    );
+    border: 1px solid var(--border-soft);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+}
+
+.quick-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.blue   { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.green  { background: linear-gradient(135deg, #22c55e, #4ade80); }
+.purple { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+.orange { background: linear-gradient(135deg, #f97316, #fb923c); }
+
+.quick-title {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.quick-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ================= SQL BOX ================= */
+.sql-box {
+    background: #020617;
+    border-radius: 10px;
+    padding: 16px;
+    color: #e5e7eb;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+    border: 1px solid var(--border-soft);
+}
+
+/* ================= TABLE ================= */
+.table {
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.table thead th {
+    background: rgba(255,255,255,0.08);
+}
+
+.table-hover tbody tr:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* ================= HISTORY PAGE (FINAL) ================= */
+.history-page .card,
+.history-page .card * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* SQL toggle */
+.history-page summary {
+    color: #93c5fd !important;
+}
+
+/* Buttons */
+.history-page .btn {
+    color: #93c5fd !important;
+    border-color: #93c5fd !important;
+}
+
+.history-page .btn:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* =========================================================
+   FINAL FIX — QUERY HISTORY TEXT VISIBILITY (GUARANTEED)
+   ========================================================= */
+
+/* Make history card background slightly lighter */
+.history-page .history-card {
+    background: rgba(255, 255, 255, 0.10) !important;
+}
+
+/* FORCE all text inside history card to white */
+.history-page .history-card,
+.history-page .history-card * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Question text - WHITE */
+.history-page .history-card li span {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+/* Question wrapper div */
+.history-page .history-card li div {
+    color: #ffffff !important;
+}
+
+/* Numbers (1., 2., 3.) */
+.history-page .history-card strong {
+    color: #ffffff !important;
+}
+
+/* Override Bootstrap muted text */
+.history-page .history-card .text-muted {
+    color: #c7d2fe !important;
+}
+
+/* SQL toggle */
+.history-page .history-card summary {
+    color: #93c5fd !important;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* SQL block */
+.history-page .history-card pre {
+    background: #020617 !important;
+    color: #e5e7eb !important;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Re-run button */
+.history-page .history-card .btn-outline-primary {
+    color: #93c5fd !important;
+    border-color: #93c5fd !important;
+}
+
+.history-page .history-card .btn-outline-primary:hover {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}

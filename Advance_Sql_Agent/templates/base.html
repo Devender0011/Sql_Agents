@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gemini Data Explorer{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+<div class="container-main">
+
+    <!-- HEADER -->
+    <div class="app-header">
+        <div>
+            <div class="app-title">✨ Gemini Data Explorer</div>
+            <div class="app-subtitle">NL → SQL → Visual</div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <a href="/" class="btn btn-outline-secondary">Home</a>
+            <a href="/history" class="btn btn-outline-secondary">History</a>
+        </div>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    {% block content %}{% endblock %}
+
+    <!-- QUICK TEMPLATES (GLOBAL) -->
+    <div class="card p-4 mt-5">
+        <div class="card-title">Quick Templates</div>
+
+        <div class="quick-grid">
+            <a href="/template/customer" class="quick-card">
+                <div class="quick-icon blue">📊</div>
+                <div>
+                    <div class="quick-title">Customer Analysis</div>
+                    <div class="quick-desc">Analyze top customers and behavior patterns</div>
+                </div>
+            </a>
+
+            <a href="/template/revenue" class="quick-card">
+                <div class="quick-icon green">💰</div>
+                <div>
+                    <div class="quick-title">Revenue Insights</div>
+                    <div class="quick-desc">Track revenue trends and campaign ROI</div>
+                </div>
+            </a>
+
+            <a href="/template/growth" class="quick-card">
+                <div class="quick-icon purple">📈</div>
+                <div>
+                    <div class="quick-title">Growth Metrics</div>
+                    <div class="quick-desc">Monitor growth and performance indicators</div>
+                </div>
+            </a>
+
+            <a href="/template/demographics" class="quick-card">
+                <div class="quick-icon orange">👥</div>
+                <div>
+                    <div class="quick-title">User Demographics</div>
+                    <div class="quick-desc">Explore customer segments and profiles</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

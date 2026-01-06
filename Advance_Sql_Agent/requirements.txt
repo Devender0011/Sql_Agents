@@ -1,0 +1,10 @@
+sqlalchemy>=1.4
+pyodbc
+python-dotenv
+google-cloud-aiplatform
+
+fastapi
+uvicorn[standard]
+jinja2
+plotly
+pandas

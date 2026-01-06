@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+    <div class="card-title">{{ title }}</div>
+    <p class="text-muted">{{ description }}</p>
+
+    <form action="/ask" method="post">
+        <textarea
+            name="question"
+            class="form-control mb-3"
+            rows="4"
+        >{{ default_query }}</textarea>
+
+        <button class="btn btn-primary w-100">
+            ▶ Run {{ title }}
+        </button>
+    </form>
+</div>
+{% endblock %}
